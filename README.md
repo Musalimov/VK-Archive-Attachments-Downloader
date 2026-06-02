@@ -8,6 +8,8 @@
 
 A tool for downloading attachments from a specific chat in a downloaded VK archive.
 
+> **NB** VK is a popular Russian social networking platform
+
 The tool finds external attachment links inside the archive’s HTML files, downloads images/audio locally, and, if needed, replaces external links in `index.html` with local files.
 
 A downloaded VK archive and the chat/dialog ID are required.
