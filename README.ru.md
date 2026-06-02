@@ -1,4 +1,4 @@
-## (RU) VK-Archive-Attachments-Downloader
+## VK Archive Attachments Downloader
 <p align="right">
   <a href="README.md">
     <img src="https://img.shields.io/badge/English%20version-README-blue?style=for-the-badge" alt="English version">
