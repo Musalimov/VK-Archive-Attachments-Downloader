@@ -1,25 +1,23 @@
 ## (RU) VK-Archive-Attachments-Downloader
-Программа для скачивания вложений определенного чата ВК. 
+<p align="right">
+  <a href="README.md">
+    <img src="https://img.shields.io/badge/English%20version-README-blue?style=for-the-badge" alt="English version">
+  </a>
+</p>
 
-При желании можно заменить внешние ссылки в index.html архива на само вложение (аудио/картинка). 
+Программа для скачивания вложений из конкретного чата в скачанном архиве ВК.
 
-Нужен скачанный ВК Архив и ID собеседника. 
+Инструмент находит внешние ссылки на вложения в HTML-файлах архива, скачивает изображения/аудио локально и, при необходимости, заменяет внешние ссылки в `index.html` на локальные файлы.
 
-Внешние ссылки на вложения перестают работать через ~180 дней с момента удаления чата/профиля.
+Для работы нужен скачанный ВК-архив и ID собеседника.
 
-Теперь можно удалять чат/профиль, не боясь, что вложения исчезнут.
+> Это полезно, потому что внешние ссылки на вложения могут перестать работать примерно через 180 дней после удаления чата или профиля. После сохранения вложений локально чат/профиль можно удалить, не боясь потерять медиафайлы.
 
-## Screenshots
+## Скриншот
 
 <p align="center">
   <img src="assets/screenshots/main.png" alt="Main window" width="850">
 </p>
-
-## (EN) VK Archive: Attachments Downloader
-
-A simple desktop tool for processing exported VK (Russian social media) chat archives and downloading media attachments locally.
-
-The program helps you work with VK archive folders by finding media links inside exported chat HTML files, downloading selected attachment types, and rewriting the chat pages so that the downloaded files can be opened locally.
 
 ## Что делает проект
 
