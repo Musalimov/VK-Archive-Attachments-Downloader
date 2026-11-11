@@ -1,95 +1,97 @@
-## (RU) VK-Archive-Attachments-Downloader
-Программа для скачивания вложений определенного чата ВК. 
+## VK Archive Attachments Downloader
 
-При желании можно заменить внешние ссылки в index.html архива на само вложение (аудио/картинка). 
+<p align="right">
+  <a href="README.ru.md">
+    <img src="https://img.shields.io/badge/Russian%20version-README-blue?style=for-the-badge" alt="Russian version">
+  </a>
+</p>
 
-Нужен скачанный ВК Архив и ID собеседника. 
+A tool for downloading attachments from a specific chat in a downloaded VK archive.
 
-Внешние ссылки на вложения перестают работать через ~180 дней с момента удаления чата/профиля.
+> **NB** VK is a popular Russian social networking platform
 
-Теперь можно удалять чат/профиль, не боясь, что вложения исчезнут.
+The tool finds external attachment links inside the archive’s HTML files, downloads images/audio locally, and, if needed, replaces external links in `index.html` with local files.
 
-## Screenshots
+A downloaded VK archive and the chat/dialog ID are required.
+
+> This is useful because external attachment links may stop working approximately 180 days after a chat or profile is deleted. After saving the attachments locally, you can delete the chat/profile without worrying that the media files will disappear.
+
+## Screenshot
 
 <p align="center">
   <img src="assets/screenshots/main.png" alt="Main window" width="850">
 </p>
 
-## (EN) VK Archive: Attachments Downloader
+## What the project does
 
-A simple desktop tool for processing exported VK (Russian social media) chat archives and downloading media attachments locally.
+VK Archive: Attachments Downloader is designed for users who have already downloaded their VK data archive and want to preserve chat attachments in a more convenient offline format.
 
-The program helps you work with VK archive folders by finding media links inside exported chat HTML files, downloading selected attachment types, and rewriting the chat pages so that the downloaded files can be opened locally.
+The tool can:
 
-## Что делает проект
+* open a local VK archive folder;
+* process a selected chat by dialog ID;
+* find media links inside `messages*.html` files;
+* download images, GIF/WebP files, stickers, and audio attachments;
+* save downloaded files into a structured folder;
+* rewrite exported HTML pages so they point to local files;
+* optionally display attachments directly inside the generated HTML pages;
+* create an `index.html` page for easier chat navigation;
+* save a `manifest.json` file to avoid downloading the same files again;
+* save failed download links into `failed_urls.txt`.
 
-VK Archive: Attachments Downloader предназначен для пользователей, которые уже скачали архив своих данных VK и хотят сохранить вложения из чатов в более удобном офлайн-формате.
+### Main features
 
-Программа умеет:
+* Graphical interface built with Tkinter
+* Local VK archive processing
+* Image support: JPG, JPEG, PNG
+* WebP, GIF, and sticker support if direct links are present in the archive
+* Audio and voice message support: OGG, MP3, M4A, AAC, WAV
+* Ability to continue processing without re-downloading already saved files using `manifest.json`
+* Progress bar and log window
+* Improved interface sharpness on Windows through DPI awareness
+* No server-side data processing
 
-* открывать локальную папку архива VK;
-* обрабатывать выбранный чат по ID диалога;
-* находить ссылки на медиафайлы внутри файлов `messages*.html`;
-* скачивать изображения, GIF/WebP-файлы, стикеры и аудио-вложения;
-* сохранять скачанные файлы в структурированную папку;
-* переписывать экспортированные HTML-страницы так, чтобы они ссылались на локальные файлы;
-* при необходимости отображать вложения прямо внутри сгенерированных HTML-страниц;
-* создавать страницу `index.html` для удобной навигации по чату;
-* сохранять файл `manifest.json`, чтобы не скачивать одни и те же файлы повторно;
-* сохранять список неудачных загрузок в `failed_urls.txt`.
+### Privacy
 
-### Основные возможности
+The program runs locally on your computer.  
+It does not upload your VK archive, messages, attachments, or personal files to external servers.
 
-* Графический интерфейс на Tkinter
-* Локальная обработка архива VK
-* Поддержка изображений: JPG, JPEG, PNG
-* Поддержка WebP, GIF и стикеров, если в архиве есть прямые ссылки
-* Поддержка аудио и голосовых сообщений: OGG, MP3, M4A, AAC, WAV
-* Возможность продолжать работу без повторного скачивания уже сохранённых файлов через `manifest.json`
-* Прогресс-бар и окно лога
-* Улучшенная чёткость интерфейса на Windows за счёт DPI awareness
-* Без серверной обработки данных
+However, when downloading attachments, the program sends requests to the original media links that are already present inside the exported VK archive.
 
-### Конфиденциальность
+### Requirements
 
-Программа работает локально на вашем компьютере.
-Она не загружает ваш архив VK, сообщения, вложения или личные файлы на внешние серверы.
+* Python 3.9 or newer
+* Windows is recommended for the current version of the interface
+* A downloaded VK data archive on your computer
 
-Однако при скачивании вложений программа отправляет запросы к исходным медиа-ссылкам, которые уже находятся внутри экспортированного архива VK.
-
-### Требования
-
-* Python 3.9 или новее
-* Windows рекомендуется для текущей версии интерфейса
-* Скачанный архив данных VK на вашем компьютере
-
-Установка зависимостей:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-```
+````
 
-### Как запустить
+### How to run
 
 ```bash
 python vk_archive_gui.py
 ```
 
-### Как пользоваться
+### How to use
 
-1. Скачайте архив своих данных VK.
-2. Распакуйте архив в папку на компьютере.
-3. Запустите программу.
-4. Выберите корневую папку архива VK.
-5. Введите ID диалога, который нужно обработать.
-6. Выберите папку, куда сохранить результат.
-7. Отметьте типы вложений, которые нужно скачать.
-8. Нажмите **Начать обработку**.
-9. Откройте сгенерированный файл `index.html` в папке результата.
+1. Download your VK data archive.
+2. Extract the archive to a folder on your computer.
+3. Run the program.
+4. Select the root folder of the VK archive.
+5. Enter the dialog ID you want to process.
+6. Choose the folder where the result should be saved.
+7. Select the attachment types you want to download.
+8. Click **Start processing**.
+9. Open the generated `index.html` file in the output folder.
 
 ## License
 
 MIT License.
 
 ## Author
+
 by Robert Musalimov
